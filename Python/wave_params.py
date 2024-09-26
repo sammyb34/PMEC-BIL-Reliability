@@ -19,5 +19,3 @@ class wave:
 
 if __name__ == "main" :
      wv = wave(2, 15, 12) 
-
-          

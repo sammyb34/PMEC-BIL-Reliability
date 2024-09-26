@@ -26,8 +26,4 @@ def init_wave(H, L, T):
     return wave_params.wave(H, L, T)
 
 wave = init_wave(1.5, 15, 12)
-
-
-
-
-    
+ 
