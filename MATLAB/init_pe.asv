@@ -1,0 +1,9 @@
+function pe = init_pe(dev)
+%INIT_PE Initializes power electronic device 
+%   Detailed explanation goes here
+switch dev
+    case 'testMO'
+outputArg1 = inputArg1;
+outputArg2 = inputArg2;
+end
+
