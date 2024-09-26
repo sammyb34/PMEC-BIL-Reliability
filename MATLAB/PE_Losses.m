@@ -16,7 +16,7 @@ switch pe.devType
     case 'MOSFET'
         % NOTE: Loss calculation can be found from https://application-notes.digchip.com/070/70-41484.pdf
         Ipk = iph * sqrt(2); 
-        Pcdmos = pe.Rdson * Ipk^2 * (1/8 + ma * pf / (3 * pi));
+        Pcdmos = pe.Ron * Ipk^2 * (1/8 + ma * pf / (3 * pi));
         Pcddio = pe.Vf * Ipk * (1/(2*pi) - ma*pf/8) + pe.Rd * Ipk^2 * (1/8 - ma*pf/(3*pi));
         Pcnd = Pcdmos + Pcddio;
         Psw = 1; % Assumed fixed right now because I don't want to deal with it
