@@ -9,4 +9,4 @@ Some software I think will be used:
 - Python
 
 
-TEsting
+Testing
