@@ -15,6 +15,7 @@ class wave:
           self.k = 2 * np.pi / L        # Wave number [1/m]
           self.omega = 2 * np.pi / T    # Wave frequency [rad/s]
           self.c = L / T                # Wave speed/clerity [m/s]
+          self.cg = self.c / 2          # Group speed [m/s]
           self.eps = self.k * self.a    # Wave steepness [-]
 
 if __name__ == "main" :
