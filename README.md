@@ -1,9 +1,8 @@
 # PMEC-BIL-Reliability
 Focused on modeling PE lifetime in a WEC system.
 
-Believe will be focusing on a point-absorber system.
+## MATLAB Folder
+Holds WEC-Sim environment, and will hold the initial junction temperature modeling tool. 
 
-Some software I think will be used:
-- MATALB
-- WECsim
-- Python
+## Python Folder
+Used to come up with ML-based condition monitoring tool that is used to schedule predictive maintenance, etc. 
