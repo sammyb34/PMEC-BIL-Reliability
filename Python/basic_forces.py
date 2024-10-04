@@ -7,6 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import wave_params
+import wec_params
 
 # -----
 # Initializes all pertinent wave parameters
@@ -25,5 +26,13 @@ def init_wave(H, L, T):
 
     return wave_params.wave(H, L, T)
 
+def init_wec(M):
+    wec = wec_params.wec(M);    # Mass, kg
+    return
+
+
+
+
 wave = init_wave(1.5, 15, 12)
+print(wave.H)
  
