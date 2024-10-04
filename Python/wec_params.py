@@ -8,4 +8,3 @@ class wec:
 
 if __name__=="main":
     conv = wec(100, "RM3")
-    print(conv.model)
