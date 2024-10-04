@@ -1,0 +1,10 @@
+classdef peConvClass<handle
+    properties 
+        type {mustBeText} = "undefined";
+        nDev {mustBeNumeric} = 999;
+    end
+    methods
+        function a 
+
+
+end
