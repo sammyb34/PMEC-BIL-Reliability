@@ -1,3 +1,9 @@
+%% Class Definition: xLineClass
+% xLineClass creates a 'xLine' object that holds electrical 
+% parameters relating to the impedance of the line, and the
+% physical line length. 
+%
+% As of now, not really sure what the best way to model this is.
 classdef xLineClass<handle
     properties
         length {mustBeNumeric} = 999; 

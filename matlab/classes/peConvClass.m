@@ -1,5 +1,5 @@
 %% Class Definition: peConvClass
-% peConvClass creates a 'conv' object that holds is used to set the
+% peConvClass creates a 'conv' object that is used to set the
 % electrical parameters of the power electronic converter (number of
 % devices, device on-resistance(s), switching energy losses, etc. 
 % Also holds functions for calculating averaged switching losses, etc. 
@@ -34,7 +34,6 @@ classdef peConvClass<handle
             % this on Monday. 
             scale = (junction_temp - 50) / 100; 
             obj.rdson = obj.rdson * scale;
-
         end
 
         function p_cond = getConductionLoss(obj, i_rms)
