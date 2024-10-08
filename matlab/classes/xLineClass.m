@@ -1,9 +1,9 @@
 classdef xLineClass<handle
     properties
         length {mustBeNumeric} = 999; 
-        L   {mustBeNumeric} = 0; 
-        C   {mustBeNumeric} = 0; 
-        R   {mustBeNumeric} = 1;
+        L   {mustBeNumeric} = 999; 
+        C   {mustBeNumeric} = 999; 
+        R   {mustBeNumeric} = 999;
     end
 
     methods
