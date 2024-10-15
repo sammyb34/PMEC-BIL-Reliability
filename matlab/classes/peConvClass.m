@@ -5,14 +5,18 @@
 % Also holds functions for calculating averaged switching losses, etc. 
 classdef peConvClass<handle
     properties 
-        type    {mustBeText}        = "undefined";
-        num_dev {mustBeNumeric}     = 999;
-        rdson   {mustBeNumeric}     = 999;
-        vf      {mustBeNumeric}     = 0; 
-        rdio    {mustBeNumeric}     = 999;
+        type    {mustBeText}        = "No Def"; % Converter type (VSC, CSC, ML, etc.)
+        num_dev {mustBeNumeric}     = 999;      % Number of devices        
+        rdson   {mustBeNumeric}     = 999;      % Device rds,on [Ohm]
+        vf      {mustBeNumeric}     = 0;        % Device diode forward voltage [V]
+        rdio    {mustBeNumeric}     = 999;      % Device diode on-resistance [Ohm]
+        fsw     {mustBeNumeric}     = 0;        % Switching frequency [1/s]
+        v_bus   {mustBeNumeric}     = 999;      % DC bus voltage [V]
     end 
+
     methods
-        function obj = peConvClass(type, num_dev, rdson, vf, rdio)
+        function obj = peConvClass(type, num_dev, rdson, vf, rdio, fsw, ...
+                v_bus)
             % Constructing an object from the peConvClass class, not really
             % sure how this works or whether it's worth it but I'm going
             % for it anyways. 
@@ -25,7 +29,9 @@ classdef peConvClass<handle
             obj.num_dev = num_dev;
             obj.rdson = rdson; 
             obj.vf = vf; 
-            obj.rdio = rdio; 
+            obj.rdio = rdio;
+            obj.fsw = fsw; 
+            obj.v_bus = v_bus; 
         end
 
         function obj = update_rdson(obj, junction_temp)
@@ -41,6 +47,11 @@ classdef peConvClass<handle
             idev_rms = i_rms / sqrt(2); 
             p_cond = idev_rms^2 * obj.rdson;
         end
+
+        function p_sw = getSwitchingLoss(obj, i_rms)
+            p_sw = 0;
+        end
+
         
     end
 end
