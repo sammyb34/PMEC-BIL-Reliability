@@ -15,5 +15,4 @@ addpath(utils_path);
 results_path = fullfile(pwd,'results'); 
 addpath(results_path);
 
-
-clear models_path utils_path results_path
+clear classes_path models_path utils_path results_path
