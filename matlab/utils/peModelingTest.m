@@ -1,0 +1,1 @@
+dev = peDvClass("Default"); % Default device

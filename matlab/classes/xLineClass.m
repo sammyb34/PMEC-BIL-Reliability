@@ -1,4 +1,4 @@
-%% Class Definition: xLineClass
+% Class Definition: xLineClass
 % xLineClass creates a 'xLine' object that holds electrical 
 % parameters relating to the impedance of the line, and the
 % physical line length. 
