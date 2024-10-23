@@ -1,4 +1,4 @@
-%% Class Definition: waveClass
+% Class Definition: waveClass
 % Creates a 'wave' object that holds wave parameters 
 classdef waveClass<handle
     properties 
