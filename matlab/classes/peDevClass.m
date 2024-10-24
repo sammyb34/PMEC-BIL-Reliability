@@ -29,8 +29,6 @@ classdef peDevClass<handle
             end
         end
 
-
-
         function obj = update_rdson(obj, junction_temp)
             % Considering the variance in rdson with device junction
             % temperature. This is just a place holder, and should work on
