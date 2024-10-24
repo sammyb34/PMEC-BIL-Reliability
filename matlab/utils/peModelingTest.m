@@ -1,1 +1,1 @@
-dev = peDvClass("Default"); % Default device
+dev = peDevClass("default"); % Default device
