@@ -8,28 +8,39 @@ classdef peDevClass<handle
     properties 
         % Default initialization parameters for the pe device object. These
         % are the parameters used if the used does not specify a type
-        type    {mustBeText}        = "Default";    % Device name  
-        rdson   {mustBeNumeric}     = 20e-3;        % Device rds,on [Ohm]
-        vf      {mustBeNumeric}     = 4.2;          % Device diode forward voltage [V]
-        rdio    {mustBeNumeric}     = 100e-3;       % Device diode on-resistance [Ohm]
-        fsw     {mustBeNumeric}     = 10e3;         % Switching frequency [1/s]
-        v_ds    {mustBeNumeric}     = 500;          % Drain-source voltage [V]
+        type    {mustBeText}        = "none";           % Device name  
+        rdson   {mustBeNumeric}     = 20e-3;            % Device rds,on [Ohm]
+        beta (1,:) {mustBeNumeric}  = [999 999 999];    % Coefficients from curve-fitting results for approximating rdson temperature dependence
+        vf      {mustBeNumeric}     = 4.2;              % Device diode forward voltage [V]
+        rdio    {mustBeNumeric}     = 100e-3;           % Device diode on-resistance [Ohm]
+        zeta (1,:) {mustBeNumeric}  = [999 999 999];    % Coefficients from curve-fitting resulst for approximating rdio temperature dependence
+        fsw     {mustBeNumeric}     = 10e3;             % Switching frequency [1/s]
+        v_ds    {mustBeNumeric}     = 500;              % Drain-source voltage [V]
+        theta(1,:) {mustBeNumeric}  = [999 999 999];    % Device thermal resistance chain [C/W or K/W] 
+        c(:,1)  {mustBeNumeric}     = [999 999 999];    % Device thermal capacitance chain [J/C or J/K]
     end 
 
     methods
         function obj = peDevClass(type)
             obj.type = type; 
             switch type 
-                case "Other"
-                    obj.rdson = 50e-3; 
+                case "default"
+                    obj.rdson = 20e-3; 
+                    % Curve-fitting to find beta values
+                    temp_tests = [-40; 25; 40; 100];
+                    normalized_rdson = [1.1; 1; 1.1; 1.2];
+                    fit_results = fit(temp_tests, normalized_rdson, 'poly2');
+                    obj.beta = [fit_results.p1 fit_results.p2 fit_results.p3]; 
                     obj.vf = 4.5; 
                     obj.rdio = 150e-3; 
+                    obj.zeta = [15 15 15];
                     obj.fsw = 15e3; 
                     obj.v_ds = 750;
+                    obj.theta = [0.007 0.020 0.100 0.100 1 0.015];
+                    obj.c   = [0.002 0.0074 0.0251 0.163 1e-3 1e3];
+                    % obj.c = [1e-15 1e-15 1e-15 1e-15 1e-15 1e3];
             end
         end
-
-
 
         function obj = update_rdson(obj, junction_temp)
             % Considering the variance in rdson with device junction
