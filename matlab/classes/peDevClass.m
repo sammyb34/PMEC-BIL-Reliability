@@ -1,9 +1,8 @@
-% Class Definition: peDevClass
+% Class - peDevClass
 % peDevClass creates a 'dev' object that is used to set the
 % electrical parameters of the power electronic devices within the power 
 % converter and associated device-related functions such as estimating
-% losses, junction temperature, etc. 
-
+% losses, junction temperature, etc.
 classdef peDevClass<handle
     properties 
         % Default initialization parameters for the pe device object. These
@@ -24,7 +23,7 @@ classdef peDevClass<handle
         function obj = peDevClass(type)
             obj.type = type; 
             switch type 
-                case "default"
+                case "default_mosfet"
                     obj.rdson = 20e-3; 
                     % Curve-fitting to find beta values
                     temp_tests = [-40; 25; 40; 100];
