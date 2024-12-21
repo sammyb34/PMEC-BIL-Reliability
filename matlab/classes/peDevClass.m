@@ -1,13 +1,14 @@
 % Class - peDevClass
 % peDevClass creates a 'dev' object that is used to set the
 % electrical parameters of the power electronic devices within the power 
-% converter and associated device-related functions such as estimating
-% losses, junction temperature, etc.
+% converter and associated device-related functions such as updating
+% parameters with respect to device temperature
 classdef peDevClass<handle
     properties 
         % Default initialization parameters for the pe device object. These
         % are the parameters used if the used does not specify a type
         type    {mustBeText}        = "none";           % Device name  
+        class   {mustBeText}        = "none";           % Device class (IGBT, MOSFET, or diode)
         rdson   {mustBeNumeric}     = 20e-3;            % Device rds,on [Ohm]
         beta (1,:) {mustBeNumeric}  = [999 999 999];    % Coefficients from curve-fitting results for approximating rdson temperature dependence
         vf      {mustBeNumeric}     = 4.2;              % Device diode forward voltage [V]
@@ -24,6 +25,7 @@ classdef peDevClass<handle
             obj.type = type; 
             switch type 
                 case "default_mosfet"
+                    obj.class = "mosfet";
                     obj.rdson = 20e-3; 
                     % Curve-fitting to find beta values
                     temp_tests = [-40; 25; 40; 100];
@@ -41,22 +43,12 @@ classdef peDevClass<handle
             end
         end
 
-        function obj = update_rdson(obj, junction_temp)
+        function obj = updaterdson(obj, junction_temp)
             % Considering the variance in rdson with device junction
-            % temperature. This is just a place holder, and should work on
-            % this on Monday. 
+            % temperature. This is just a place holder, NEED TO WORK ON
+            % THIS
             scale = (junction_temp - 50) / 100; 
             obj.rdson = obj.rdson * scale;
-        end
-
-        function p_cond = getConductionLoss(obj, i_rms)
-            % Calculates conduction losses for a single device.
-            idev_rms = i_rms / sqrt(2); 
-            p_cond = idev_rms^2 * obj.rdson;
-        end
-
-        function p_sw = getSwitchingLoss(obj, i_rms)
-            p_sw = 0;
         end
 
         

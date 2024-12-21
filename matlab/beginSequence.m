@@ -3,6 +3,12 @@
 % necessary functions and models
 clear; clc; close all; 
 
+home_path = pwd; 
+wecsim_path = "C:\Users\bartonsa\WEC-Sim\"; % Must change this for each location
+cd(wecsim_path)
+addWecSimSource
+cd(home_path)
+
 classes_path = fullfile(pwd,'classes');
 addpath(classes_path);
 
@@ -15,4 +21,10 @@ addpath(utils_path);
 results_path = fullfile(pwd,'results'); 
 addpath(results_path);
 
-clear classes_path models_path utils_path results_path
+lib_path = fullfile(pwd,'lib'); 
+addpath(lib_path);
+
+tests_path = fullfile(pwd,'tests');
+addpath(tests_path)
+
+clear 
