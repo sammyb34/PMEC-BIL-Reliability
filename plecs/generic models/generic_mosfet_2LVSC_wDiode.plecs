@@ -3,7 +3,7 @@ Plecs {
   Version       "4.7"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
-  TimeSpan      "0.1"
+  TimeSpan      "1"
   Timeout       ""
   Solver        "auto"
   MaxStep       "1e-3"
@@ -212,7 +212,7 @@ Plecs {
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "10e-3"
+        Value         "1e-3"
         Show          off
       }
       Parameter {
@@ -231,7 +231,7 @@ Plecs {
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "10e-3"
+        Value         "100e-3"
         Show          off
       }
       Parameter {
@@ -250,7 +250,7 @@ Plecs {
       LabelPosition north
       Parameter {
         Variable      "L"
-        Value         "10e-3"
+        Value         "100e-3"
         Show          off
       }
       Parameter {
@@ -269,7 +269,7 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "R"
-        Value         "10"
+        Value         "15"
         Show          off
       }
     }
@@ -283,7 +283,7 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "R"
-        Value         "10"
+        Value         "15"
         Show          off
       }
     }
@@ -297,7 +297,7 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "R"
-        Value         "10"
+        Value         "15"
         Show          off
       }
     }
@@ -888,11 +888,11 @@ Plecs {
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL0AMAAAAFAAAAB"
-"AAAAH0AAAAHAAAAfQAAAAYAAAB9AAAACQAAAH0AAAAIAAAAfQAACgAAAAALAQAAAQAAAAAAAAAAAA"
-"AAAH3/////AAAAgQAAAAAAAAALAAAA/gAAAAEAAAAAAAAAfQAAAAEAAAAAAAAAfQAAAAEAAAAAAAA"
-"AfQAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAfQAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAA"
-"AAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAHDgAAAAEAAAAAAAAD6AAAAAAr"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALUAMAAAAEAAAAB"
+"AAAAH0AAAAGAAAAfQAAAAkAAAB9AAAACAAAAH0AAAoAAAAACwEAAAEAAAAAAAAAAAAAAAB9/////w"
+"AAAIEAAAAAAAAACwAAAP4AAAABAAAAAAAAAH0AAAABAAAAAAAAAH0AAAABAAAAAAAAAH0AAAABAAA"
+"AAAAAAAAAAAABAAAAAAAAAH0AAAABAAAAAAAAAAAAAAABAAAAAAAAAH0AAAABAAAAAAAAAAAAAAAB"
+"AAAAAAAAAAAAAAABAAAAAAAABpEAAAABAAAAAAAAA+gAAAAAKw=="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "=="
@@ -1065,19 +1065,19 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 23; 2048, 1084]
+      Location      [1314, 151; 1988, 651]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAD8A////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
-"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAAoAAAAAsPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAACgAAAABfAP///wAACgAAAARaAAAA"
+"///wAAAH4A////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAAB+AP///wAAAAMAAANLAAAAsPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAA0sAAABfAP///wAAA0sAAAGdAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAALcAIAAAAEAAAAB"
-"QAAAH0AAAAEAAAAfQAAAAYAAAB9AAAACQAAAH0AAAoAAAAACwEAAAEAAAAAAAAAAAAAAAB9/////w"
+"QAAAH0AAAAEAAAAfQAAAAYAAAB9AAAACQAAAH0AAANTAAAACwEAAAEAAAAAAAAAAAAAAAB9/////w"
 "AAAIEAAAAAAAAACwAAALcAAAABAAAAAAAAAH0AAAABAAAAAAAAAH0AAAABAAAAAAAAAH0AAAABAAA"
 "AAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAH0AAAABAAAAAAAAAH0AAAAB"
-"AAAAAAAAAAAAAAABAAAAAAAABtgAAAABAAAAAAAAA+gAAAAAKw=="
+"AAAAAAAAAAAAAAABAAAAAAAAACsAAAABAAAAAAAAA+gAAAAAKw=="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
       Axes          "1"
       TimeRange     "0.0"
